@@ -1,5 +1,8 @@
 ---
 title: "Data Analysis"
+execute: 
+  echo: false
+  message: false
 ---
 
 # Data Analysis of Student Exam Performances

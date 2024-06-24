@@ -1,6 +1,9 @@
 ---
 title: "Student Exam Performances"
 author: "Harshil Kurapati"
+execute: 
+  echo: false
+  message: false
 ---
 
 # Introduction

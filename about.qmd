@@ -1,5 +1,8 @@
 ---
 title: "About Page"
+execute: 
+  echo: false
+  message: false
 ---
 
 # About This Project
