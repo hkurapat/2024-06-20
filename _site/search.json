@@ -1,5 +1,26 @@
 [
   {
+    "objectID": "data.html",
+    "href": "data.html",
+    "title": "Data Analysis",
+    "section": "",
+    "text": "Provide an introduction to the dataset and its context. Mention the source (Kaggle dataset on student exam performances), the variables included, and any initial insights or hypotheses you want to explore.\n\n\n\n\n\nDescribe the dataset structure, including the columns/features available and their meanings.\n\n\n\nProvide summary statistics such as mean, median, standard deviation for numerical variables like math scores, reading scores, and writing scores.\nlibrary(tidyverse)"
+  },
+  {
+    "objectID": "data.html#introduction",
+    "href": "data.html#introduction",
+    "title": "Data Analysis",
+    "section": "",
+    "text": "Provide an introduction to the dataset and its context. Mention the source (Kaggle dataset on student exam performances), the variables included, and any initial insights or hypotheses you want to explore."
+  },
+  {
+    "objectID": "data.html#exploratory-data-analysis",
+    "href": "data.html#exploratory-data-analysis",
+    "title": "Data Analysis",
+    "section": "",
+    "text": "Describe the dataset structure, including the columns/features available and their meanings.\n\n\n\nProvide summary statistics such as mean, median, standard deviation for numerical variables like math scores, reading scores, and writing scores.\nlibrary(tidyverse)"
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Student Exam Performances",
@@ -7,18 +28,39 @@
     "text": "Welcome to the Student Exam Performances project website. This project analyzes the performance of students in exams using a dataset from Kaggle. It focuses on understanding factors such as demographics, parental education levels, and test preparation, and how these correlate with exam scores. Discover insights and trends that can help improve educational outcomes.\nKey Insight: Students who completed the test preparation course scored significantly higher on average across all subjects compared to those who did not.\n\n\n\n\nlibrary(ggplot2) library(dplyr)"
   },
   {
-    "objectID": "index.html#dataset-description",
-    "href": "index.html#dataset-description",
+    "objectID": "index.html#exploring-exam-scores",
+    "href": "index.html#exploring-exam-scores",
     "title": "Student Exam Performances",
     "section": "",
-    "text": "The dataset contains the following columns:\n\ngender: Student’s gender (male/female)\nrace/ethnicity: Race/ethnicity of the student\nparental level of education: Parent’s education level\nlunch: Type of lunch student received (standard/reduced)\ntest preparation course: Whether the student completed a test preparation course (none/completed)\nmath score: Score in math exam\nreading score: Score in reading exam\nwriting score: Score in writing exam"
+    "text": "library(ggplot2) library(dplyr)"
   },
   {
-    "objectID": "index.html#initial-data-exploration",
-    "href": "index.html#initial-data-exploration",
-    "title": "Student Exam Performances",
+    "objectID": "downloads.html",
+    "href": "downloads.html",
+    "title": "Data Source and Cleaning",
     "section": "",
-    "text": "library(tidyverse)\nstudents &lt;- read.csv(“data/StudentsPerformance.csv”)"
+    "text": "The dataset used in this project is sourced from Kaggle’s “Students Performance in Exams” dataset. This dataset contains information about students’ demographics, parental education levels, lunch type, test preparation status, and exam scores in math, reading, and writing.\n\nLink to Dataset: Kaggle - Students Performance in Exams\n\n\n\n\nBefore conducting the analysis, the dataset underwent several cleaning steps:\n\nHandling Missing Values: Checked for missing values in all columns. For columns with missing data (e.g., parental education level), decisions were made based on the impact of missing values on the analysis. Missing values were either imputed or removed, depending on the context.\nData Transformation: Converted categorical variables (e.g., gender, race/ethnicity) into factors for easier analysis and visualization.\nOutlier Detection: Identified potential outliers in exam scores using statistical methods (e.g., Tukey’s fences). Outliers were carefully examined and either removed or kept based on their impact on the overall analysis.\n\n\n\n\n\nNone: The dataset did not require the removal of entire observations. However, outliers in exam scores were removed to ensure the robustness of the analysis and visualizations.\n\n\n\n\nFor more details about this project, visit the About page."
+  },
+  {
+    "objectID": "downloads.html#data-source",
+    "href": "downloads.html#data-source",
+    "title": "Data Source and Cleaning",
+    "section": "",
+    "text": "The dataset used in this project is sourced from Kaggle’s “Students Performance in Exams” dataset. This dataset contains information about students’ demographics, parental education levels, lunch type, test preparation status, and exam scores in math, reading, and writing.\n\nLink to Dataset: Kaggle - Students Performance in Exams"
+  },
+  {
+    "objectID": "downloads.html#data-cleaning",
+    "href": "downloads.html#data-cleaning",
+    "title": "Data Source and Cleaning",
+    "section": "",
+    "text": "Before conducting the analysis, the dataset underwent several cleaning steps:\n\nHandling Missing Values: Checked for missing values in all columns. For columns with missing data (e.g., parental education level), decisions were made based on the impact of missing values on the analysis. Missing values were either imputed or removed, depending on the context.\nData Transformation: Converted categorical variables (e.g., gender, race/ethnicity) into factors for easier analysis and visualization.\nOutlier Detection: Identified potential outliers in exam scores using statistical methods (e.g., Tukey’s fences). Outliers were carefully examined and either removed or kept based on their impact on the overall analysis."
+  },
+  {
+    "objectID": "downloads.html#observations-removed",
+    "href": "downloads.html#observations-removed",
+    "title": "Data Source and Cleaning",
+    "section": "",
+    "text": "None: The dataset did not require the removal of entire observations. However, outliers in exam scores were removed to ensure the robustness of the analysis and visualizations.\n\n\n\n\nFor more details about this project, visit the About page."
   },
   {
     "objectID": "about.html",
@@ -54,173 +96,5 @@
     "title": "About Page",
     "section": "",
     "text": "This project was created as a part of Kane’s Data Science Bootcamp, where I learned essential skills in data analysis and visualization to tackle real-world challenges."
-  },
-  {
-    "objectID": "about.html#license",
-    "href": "about.html#license",
-    "title": "About Me",
-    "section": "",
-    "text": "This project is licensed under the [License Name]."
-  },
-  {
-    "objectID": "data_analysis.html",
-    "href": "data_analysis.html",
-    "title": "Student Exam Performances",
-    "section": "",
-    "text": "This website explores the performance of students in exams using the StudentsPerformance.csv dataset. The dataset includes information such as student demographics, parental education levels, and exam scores in various subjects.\n\n\nThe dataset contains the following columns:\n\ngender: Student’s gender (male/female)\nrace/ethnicity: Race/ethnicity of the student\nparental level of education: Parent’s education level\nlunch: Type of lunch student received (standard/reduced)\ntest preparation course: Whether the student completed a test preparation course (none/completed)\nmath score: Score in math exam\nreading score: Score in reading exam\nwriting score: Score in writing exam\n\n\n\n\n\n\nlibrary(tidyverse)\nstudents &lt;- read.csv(“data/StudentsPerformance.csv”)"
-  },
-  {
-    "objectID": "data_analysis.html#dataset-description",
-    "href": "data_analysis.html#dataset-description",
-    "title": "Student Exam Performances",
-    "section": "",
-    "text": "The dataset contains the following columns:\n\ngender: Student’s gender (male/female)\nrace/ethnicity: Race/ethnicity of the student\nparental level of education: Parent’s education level\nlunch: Type of lunch student received (standard/reduced)\ntest preparation course: Whether the student completed a test preparation course (none/completed)\nmath score: Score in math exam\nreading score: Score in reading exam\nwriting score: Score in writing exam"
-  },
-  {
-    "objectID": "data_analysis.html#initial-data-exploration",
-    "href": "data_analysis.html#initial-data-exploration",
-    "title": "Student Exam Performances",
-    "section": "",
-    "text": "library(tidyverse)\nstudents &lt;- read.csv(“data/StudentsPerformance.csv”)"
-  },
-  {
-    "objectID": "sources.html",
-    "href": "sources.html",
-    "title": "Student Exam Performances",
-    "section": "",
-    "text": "This website explores the performance of students in exams using the StudentsPerformance.csv dataset. The dataset includes information such as student demographics, parental education levels, and exam scores in various subjects.\n\n\nThe dataset contains the following columns:\n\ngender: Student’s gender (male/female)\nrace/ethnicity: Race/ethnicity of the student\nparental level of education: Parent’s education level\nlunch: Type of lunch student received (standard/reduced)\ntest preparation course: Whether the student completed a test preparation course (none/completed)\nmath score: Score in math exam\nreading score: Score in reading exam\nwriting score: Score in writing exam\n\n\n\n\n\n\nlibrary(tidyverse)\nstudents &lt;- read.csv(“data/StudentsPerformance.csv”)"
-  },
-  {
-    "objectID": "sources.html#dataset-description",
-    "href": "sources.html#dataset-description",
-    "title": "Student Exam Performances",
-    "section": "",
-    "text": "The dataset contains the following columns:\n\ngender: Student’s gender (male/female)\nrace/ethnicity: Race/ethnicity of the student\nparental level of education: Parent’s education level\nlunch: Type of lunch student received (standard/reduced)\ntest preparation course: Whether the student completed a test preparation course (none/completed)\nmath score: Score in math exam\nreading score: Score in reading exam\nwriting score: Score in writing exam"
-  },
-  {
-    "objectID": "sources.html#initial-data-exploration",
-    "href": "sources.html#initial-data-exploration",
-    "title": "Student Exam Performances",
-    "section": "",
-    "text": "library(tidyverse)\nstudents &lt;- read.csv(“data/StudentsPerformance.csv”)"
-  },
-  {
-    "objectID": "downloads.html",
-    "href": "downloads.html",
-    "title": "Data Source and Cleaning",
-    "section": "",
-    "text": "The dataset used in this project is sourced from Kaggle’s “Students Performance in Exams” dataset. This dataset contains information about students’ demographics, parental education levels, lunch type, test preparation status, and exam scores in math, reading, and writing.\n\nLink to Dataset: Kaggle - Students Performance in Exams\n\n\n\n\nBefore conducting the analysis, the dataset underwent several cleaning steps:\n\nHandling Missing Values: Checked for missing values in all columns. For columns with missing data (e.g., parental education level), decisions were made based on the impact of missing values on the analysis. Missing values were either imputed or removed, depending on the context.\nData Transformation: Converted categorical variables (e.g., gender, race/ethnicity) into factors for easier analysis and visualization.\nOutlier Detection: Identified potential outliers in exam scores using statistical methods (e.g., Tukey’s fences). Outliers were carefully examined and either removed or kept based on their impact on the overall analysis.\n\n\n\n\n\nNone: The dataset did not require the removal of entire observations. However, outliers in exam scores were removed to ensure the robustness of the analysis and visualizations.\n\n\n\n\nFor more details about this project, visit the About page."
-  },
-  {
-    "objectID": "downloads.html#dataset-description",
-    "href": "downloads.html#dataset-description",
-    "title": "Student Exam Performances",
-    "section": "",
-    "text": "The dataset contains the following columns:\n\ngender: Student’s gender (male/female)\nrace/ethnicity: Race/ethnicity of the student\nparental level of education: Parent’s education level\nlunch: Type of lunch student received (standard/reduced)\ntest preparation course: Whether the student completed a test preparation course (none/completed)\nmath score: Score in math exam\nreading score: Score in reading exam\nwriting score: Score in writing exam"
-  },
-  {
-    "objectID": "downloads.html#initial-data-exploration",
-    "href": "downloads.html#initial-data-exploration",
-    "title": "Student Exam Performances",
-    "section": "",
-    "text": "library(tidyverse)\nstudents &lt;- read.csv(“data/StudentsPerformance.csv”)"
-  },
-  {
-    "objectID": "data analysis.html",
-    "href": "data analysis.html",
-    "title": "Student Exam Performances",
-    "section": "",
-    "text": "This website explores the performance of students in exams using the StudentsPerformance.csv dataset. The dataset includes information such as student demographics, parental education levels, and exam scores in various subjects.\n\n\nThe dataset contains the following columns:\n\ngender: Student’s gender (male/female)\nrace/ethnicity: Race/ethnicity of the student\nparental level of education: Parent’s education level\nlunch: Type of lunch student received (standard/reduced)\ntest preparation course: Whether the student completed a test preparation course (none/completed)\nmath score: Score in math exam\nreading score: Score in reading exam\nwriting score: Score in writing exam\n\n\n\n\n\n\nlibrary(tidyverse)\nstudents &lt;- read.csv(“data/StudentsPerformance.csv”)"
-  },
-  {
-    "objectID": "data analysis.html#dataset-description",
-    "href": "data analysis.html#dataset-description",
-    "title": "Student Exam Performances",
-    "section": "",
-    "text": "The dataset contains the following columns:\n\ngender: Student’s gender (male/female)\nrace/ethnicity: Race/ethnicity of the student\nparental level of education: Parent’s education level\nlunch: Type of lunch student received (standard/reduced)\ntest preparation course: Whether the student completed a test preparation course (none/completed)\nmath score: Score in math exam\nreading score: Score in reading exam\nwriting score: Score in writing exam"
-  },
-  {
-    "objectID": "data analysis.html#initial-data-exploration",
-    "href": "data analysis.html#initial-data-exploration",
-    "title": "Student Exam Performances",
-    "section": "",
-    "text": "library(tidyverse)\nstudents &lt;- read.csv(“data/StudentsPerformance.csv”)"
-  },
-  {
-    "objectID": "downloads.html#data-files",
-    "href": "downloads.html#data-files",
-    "title": "Downloads",
-    "section": "",
-    "text": "Students Performance Data"
-  },
-  {
-    "objectID": "downloads.html#analysis-reports",
-    "href": "downloads.html#analysis-reports",
-    "title": "Downloads",
-    "section": "",
-    "text": "Math Scores Analysis Report\nReading Scores Analysis Report\nWriting Scores Analysis Report"
-  },
-  {
-    "objectID": "data.html",
-    "href": "data.html",
-    "title": "Data Analysis",
-    "section": "",
-    "text": "Provide an introduction to the dataset and its context. Mention the source (Kaggle dataset on student exam performances), the variables included, and any initial insights or hypotheses you want to explore.\n\n\n\n\n\nDescribe the dataset structure, including the columns/features available and their meanings.\n\n\n\nProvide summary statistics such as mean, median, standard deviation for numerical variables like math scores, reading scores, and writing scores.\nlibrary(tidyverse)"
-  },
-  {
-    "objectID": "data.html#dataset-description",
-    "href": "data.html#dataset-description",
-    "title": "Student Exam Performances",
-    "section": "",
-    "text": "The dataset contains the following columns:\n\ngender: Student’s gender (male/female)\nrace/ethnicity: Race/ethnicity of the student\nparental level of education: Parent’s education level\nlunch: Type of lunch student received (standard/reduced)\ntest preparation course: Whether the student completed a test preparation course (none/completed)\nmath score: Score in math exam\nreading score: Score in reading exam\nwriting score: Score in writing exam"
-  },
-  {
-    "objectID": "data.html#initial-data-exploration",
-    "href": "data.html#initial-data-exploration",
-    "title": "Student Exam Performances",
-    "section": "",
-    "text": "library(tidyverse)\nstudents &lt;- read.csv(“data/StudentsPerformance.csv”)"
-  },
-  {
-    "objectID": "data.html#introduction",
-    "href": "data.html#introduction",
-    "title": "Data Analysis",
-    "section": "",
-    "text": "Provide an introduction to the dataset and its context. Mention the source (Kaggle dataset on student exam performances), the variables included, and any initial insights or hypotheses you want to explore."
-  },
-  {
-    "objectID": "data.html#exploratory-data-analysis",
-    "href": "data.html#exploratory-data-analysis",
-    "title": "Data Analysis",
-    "section": "",
-    "text": "Describe the dataset structure, including the columns/features available and their meanings.\n\n\n\nProvide summary statistics such as mean, median, standard deviation for numerical variables like math scores, reading scores, and writing scores.\nlibrary(tidyverse)"
-  },
-  {
-    "objectID": "index.html#exploring-exam-scores",
-    "href": "index.html#exploring-exam-scores",
-    "title": "Student Exam Performances",
-    "section": "",
-    "text": "library(ggplot2) library(dplyr)"
-  },
-  {
-    "objectID": "downloads.html#data-source",
-    "href": "downloads.html#data-source",
-    "title": "Data Source and Cleaning",
-    "section": "",
-    "text": "The dataset used in this project is sourced from Kaggle’s “Students Performance in Exams” dataset. This dataset contains information about students’ demographics, parental education levels, lunch type, test preparation status, and exam scores in math, reading, and writing.\n\nLink to Dataset: Kaggle - Students Performance in Exams"
-  },
-  {
-    "objectID": "downloads.html#data-cleaning",
-    "href": "downloads.html#data-cleaning",
-    "title": "Data Source and Cleaning",
-    "section": "",
-    "text": "Before conducting the analysis, the dataset underwent several cleaning steps:\n\nHandling Missing Values: Checked for missing values in all columns. For columns with missing data (e.g., parental education level), decisions were made based on the impact of missing values on the analysis. Missing values were either imputed or removed, depending on the context.\nData Transformation: Converted categorical variables (e.g., gender, race/ethnicity) into factors for easier analysis and visualization.\nOutlier Detection: Identified potential outliers in exam scores using statistical methods (e.g., Tukey’s fences). Outliers were carefully examined and either removed or kept based on their impact on the overall analysis."
-  },
-  {
-    "objectID": "downloads.html#observations-removed",
-    "href": "downloads.html#observations-removed",
-    "title": "Data Source and Cleaning",
-    "section": "",
-    "text": "None: The dataset did not require the removal of entire observations. However, outliers in exam scores were removed to ensure the robustness of the analysis and visualizations.\n\n\n\n\nFor more details about this project, visit the About page."
   }
 ]
