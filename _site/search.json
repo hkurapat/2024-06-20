@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Student Exam Performances",
     "section": "",
-    "text": "This website explores the performance of students in exams using the StudentsPerformance.csv dataset. The dataset includes information such as student demographics, parental education levels, and exam scores in various subjects.\n\n\nThe dataset contains the following columns:\n\ngender: Student’s gender (male/female)\nrace/ethnicity: Race/ethnicity of the student\nparental level of education: Parent’s education level\nlunch: Type of lunch student received (standard/reduced)\ntest preparation course: Whether the student completed a test preparation course (none/completed)\nmath score: Score in math exam\nreading score: Score in reading exam\nwriting score: Score in writing exam\n\n\n\n\n\n\nlibrary(tidyverse)\nstudents &lt;- read.csv(“data/StudentsPerformance.csv”)"
+    "text": "Welcome to the Student Exam Performances project website. This project analyzes the performance of students in exams using the Kaggle dataset. It focuses on understanding factors such as demographics, parental education levels, and test preparation, and how these correlate with exam scores.\n\n\n\n\nlibrary(ggplot2) library(dplyr)"
   },
   {
     "objectID": "index.html#dataset-description",
@@ -194,5 +194,12 @@
     "title": "Data Analysis",
     "section": "",
     "text": "Describe the dataset structure, including the columns/features available and their meanings.\n\n\n\nProvide summary statistics such as mean, median, standard deviation for numerical variables like math scores, reading scores, and writing scores.\nlibrary(tidyverse)"
+  },
+  {
+    "objectID": "index.html#exploring-exam-scores",
+    "href": "index.html#exploring-exam-scores",
+    "title": "Student Exam Performances",
+    "section": "",
+    "text": "library(ggplot2) library(dplyr)"
   }
 ]
