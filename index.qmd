@@ -1,0 +1,109 @@
+---
+title: "Student Performance Analysis"
+author: "Your Name"
+date: "`r format(Sys.Date(), '%B %d, %Y')`"
+format:
+  html:
+    css: styles.css
+    toc: true
+    toc-depth: 2
+    toc-title: "Contents"
+    
+---
+
+
+# Load necessary libraries
+library(tidyverse)
+library(ggplot2)
+library(dplyr)
+library(readr)
+library(summarytools)
+library(patchwork)
+ # Load the data
+data <- read_csv("StudentsPerformance.csv")
+
+# Display the first few rows of the data
+head(data)
+
+# Summary statistics of the data
+summary(data)
+
+# Check for missing values
+sapply(data, function(x) sum(is.na(x)))
+
+# Handle missing values (example: remove rows with missing values)
+data <- na.omit(data)
+
+# Convert necessary columns to appropriate data types
+data$gender <- as.factor(data$gender)
+data$race_ethnicity <- as.factor(data$`race/ethnicity`)
+data$parental_level_of_education <- as.factor(data$`parental level of education`)
+data$lunch <- as.factor(data$lunch)
+data$test_preparation_course <- as.factor(data$`test preparation course`)
+
+ggplot(data, aes(x=gender)) +
+  geom_bar(fill='skyblue') +
+  labs(title="Gender Distribution", x="Gender", y="Count") +
+  theme_minimal()
+ggplot(data, aes(x=gender, y=`math score`, fill=gender)) +
+  geom_boxplot() +
+  labs(title="Math Scores by Gender", x="Gender", y="Math Score") +
+  theme_minimal()
+
+ggplot(data, aes(x=gender, y=`reading score`, fill=gender)) +
+  geom_boxplot() +
+  labs(title="Reading Scores by Gender", x="Gender", y="Reading Score") +
+  theme_minimal()
+
+ggplot(data, aes(x=gender, y=`writing score`, fill=gender)) +
+  geom_boxplot() +
+  labs(title="Writing Scores by Gender", x="Gender", y="Writing Score") +
+  theme_minimal()
+ggplot(data, aes(x=parental_level_of_education, y=`math score`, fill=parental_level_of_education)) +
+  geom_boxplot() +
+  labs(title="Math Scores by Parental Education", x="Parental Education Level", y="Math Score") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle=45, hjust=1))
+
+ggplot(data, aes(x=parental_level_of_education, y=`reading score`, fill=parental_level_of_education)) +
+  geom_boxplot() +
+  labs(title="Reading Scores by Parental Education", x="Parental Education Level", y="Reading Score") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle=45, hjust=1))
+
+ggplot(data, aes(x=parental_level_of_education, y=`writing score`, fill=parental_level_of_education)) +
+  geom_boxplot() +
+  labs(title="Writing Scores by Parental Education", x="Parental Education Level", y="Writing Score") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle=45, hjust=1))
+# Scatter plot between math and reading scores
+p1 <- ggplot(data, aes(x=`math score`, y=`reading score`)) +
+  geom_point(alpha=0.5, color='blue') +
+  geom_smooth(method='lm', color='red') +
+  labs(title="Math vs Reading Scores", x="Math Score", y="Reading Score") +
+  theme_minimal()
+
+# Scatter plot between math and writing scores
+p2 <- ggplot(data, aes(x=`math score`, y=`writing score`)) +
+  geom_point(alpha=0.5, color='green') +
+  geom_smooth(method='lm', color='red') +
+  labs(title="Math vs Writing Scores", x="Math Score", y="Writing Score") +
+  theme_minimal()
+
+# Combine the plots
+p1 + p2
+
+ggplot(data, aes(x=lunch, y=`math score`, fill=lunch)) +
+  geom_boxplot() +
+  labs(title="Math Scores by Lunch Type", x="Lunch Type", y="Math Score") +
+  theme_minimal()
+
+ggplot(data, aes(x=lunch, y=`reading score`, fill=lunch)) +
+  geom_boxplot() +
+  labs(title="Reading Scores by Lunch Type", x="Lunch Type", y="Reading Score") +
+  theme_minimal()
+
+ggplot(data, aes(x=lunch, y=`writing score`, fill=lunch)) +
+  geom_boxplot() +
+  labs(title="Writing Scores by Lunch Type", x="Lunch Type", y="Writing Score") +
+  theme_minimal()
