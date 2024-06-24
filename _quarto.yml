@@ -8,9 +8,7 @@ website:
     left:
       - text: "Home"
         href: index.qmd
-      - text: "Data Analysis"
-        href: data.qmd
-      - text: "Downloads"
+      - text: "Sources"
         href: downloads.qmd
       - text: "About"
         href: about.qmd

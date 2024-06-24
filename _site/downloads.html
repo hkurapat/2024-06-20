@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Students Exam Performances - Downloads</title>
+<title>Students Exam Performances - Data Source and Cleaning</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -98,7 +98,7 @@ ul.task-list li input[type="checkbox"] {
   </li>  
   <li class="nav-item">
     <a class="nav-link active" href="./downloads.html" aria-current="page"> 
-<span class="menu-text">Downloads</span></a>
+<span class="menu-text">Sources</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./about.html"> 
@@ -120,10 +120,14 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#downloads" id="toc-downloads" class="nav-link active" data-scroll-target="#downloads">Downloads</a>
+  <li><a href="#data-sources-and-cleaning" id="toc-data-sources-and-cleaning" class="nav-link active" data-scroll-target="#data-sources-and-cleaning">Data Sources and Cleaning</a>
   <ul class="collapse">
-  <li><a href="#data-files" id="toc-data-files" class="nav-link" data-scroll-target="#data-files">Data Files</a></li>
-  <li><a href="#analysis-reports" id="toc-analysis-reports" class="nav-link" data-scroll-target="#analysis-reports">Analysis Reports</a></li>
+  <li><a href="#data-source" id="toc-data-source" class="nav-link" data-scroll-target="#data-source">Data Source</a></li>
+  <li><a href="#data-cleaning" id="toc-data-cleaning" class="nav-link" data-scroll-target="#data-cleaning">Data Cleaning</a></li>
+  <li><a href="#observations-removed" id="toc-observations-removed" class="nav-link" data-scroll-target="#observations-removed">Observations Removed</a>
+  <ul class="collapse">
+  <li><a href="#explore-more" id="toc-explore-more" class="nav-link" data-scroll-target="#explore-more">Explore More</a></li>
+  </ul></li>
   </ul></li>
   </ul>
 </nav>
@@ -133,7 +137,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Downloads</h1>
+<h1 class="title">Data Source and Cleaning</h1>
 </div>
 
 
@@ -150,23 +154,36 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="downloads" class="level1">
-<h1>Downloads</h1>
-<section id="data-files" class="level2">
-<h2 class="anchored" data-anchor-id="data-files">Data Files</h2>
+<section id="data-sources-and-cleaning" class="level1">
+<h1>Data Sources and Cleaning</h1>
+<section id="data-source" class="level2">
+<h2 class="anchored" data-anchor-id="data-source">Data Source</h2>
+<p>The dataset used in this project is sourced from Kaggle’s “Students Performance in Exams” dataset. This dataset contains information about students’ demographics, parental education levels, lunch type, test preparation status, and exam scores in math, reading, and writing.</p>
 <ul>
-<li><a href="data/StudentsPerformance.csv">Students Performance Data</a></li>
+<li><strong>Link to Dataset</strong>: <a href="https://www.kaggle.com/spscientist/students-performance-in-exams">Kaggle - Students Performance in Exams</a></li>
 </ul>
 </section>
-<section id="analysis-reports" class="level2">
-<h2 class="anchored" data-anchor-id="analysis-reports">Analysis Reports</h2>
+<section id="data-cleaning" class="level2">
+<h2 class="anchored" data-anchor-id="data-cleaning">Data Cleaning</h2>
+<p>Before conducting the analysis, the dataset underwent several cleaning steps:</p>
 <ul>
-<li><a href="reports/math_analysis.pdf">Math Scores Analysis Report</a></li>
-<li><a href="reports/reading_analysis.pdf">Reading Scores Analysis Report</a></li>
-<li><a href="reports/writing_analysis.pdf">Writing Scores Analysis Report</a></li>
+<li><p><strong>Handling Missing Values</strong>: Checked for missing values in all columns. For columns with missing data (e.g., parental education level), decisions were made based on the impact of missing values on the analysis. Missing values were either imputed or removed, depending on the context.</p></li>
+<li><p><strong>Data Transformation</strong>: Converted categorical variables (e.g., gender, race/ethnicity) into factors for easier analysis and visualization.</p></li>
+<li><p><strong>Outlier Detection</strong>: Identified potential outliers in exam scores using statistical methods (e.g., Tukey’s fences). Outliers were carefully examined and either removed or kept based on their impact on the overall analysis.</p></li>
 </ul>
+</section>
+<section id="observations-removed" class="level2">
+<h2 class="anchored" data-anchor-id="observations-removed">Observations Removed</h2>
+<ul>
+<li><strong>None</strong>: The dataset did not require the removal of entire observations. However, outliers in exam scores were removed to ensure the robustness of the analysis and visualizations.</li>
+</ul>
+<hr>
+<section id="explore-more" class="level3">
+<h3 class="anchored" data-anchor-id="explore-more">Explore More</h3>
+<p>For more details about this project, visit the <a href="about.html">About</a> page.</p>
 
 
+</section>
 </section>
 </section>
 

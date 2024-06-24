@@ -1,18 +1,34 @@
 ---
-title: "Downloads"
+title: "Data Source and Cleaning"
 execute: 
   echo: false
   message: false
 ---
 
-# Downloads
+# Data Sources and Cleaning
 
-## Data Files
+## Data Source
 
-- [Students Performance Data](data/StudentsPerformance.csv)
+The dataset used in this project is sourced from Kaggle's "Students Performance in Exams" dataset. This dataset contains information about students' demographics, parental education levels, lunch type, test preparation status, and exam scores in math, reading, and writing.
 
-## Analysis Reports
+- **Link to Dataset**: [Kaggle - Students Performance in Exams](https://www.kaggle.com/spscientist/students-performance-in-exams)
 
-- [Math Scores Analysis Report](reports/math_analysis.pdf)
-- [Reading Scores Analysis Report](reports/reading_analysis.pdf)
-- [Writing Scores Analysis Report](reports/writing_analysis.pdf)
+## Data Cleaning
+
+Before conducting the analysis, the dataset underwent several cleaning steps:
+
+- **Handling Missing Values**: Checked for missing values in all columns. For columns with missing data (e.g., parental education level), decisions were made based on the impact of missing values on the analysis. Missing values were either imputed or removed, depending on the context.
+  
+- **Data Transformation**: Converted categorical variables (e.g., gender, race/ethnicity) into factors for easier analysis and visualization.
+  
+- **Outlier Detection**: Identified potential outliers in exam scores using statistical methods (e.g., Tukey's fences). Outliers were carefully examined and either removed or kept based on their impact on the overall analysis.
+
+## Observations Removed
+
+- **None**: The dataset did not require the removal of entire observations. However, outliers in exam scores were removed to ensure the robustness of the analysis and visualizations.
+
+---
+
+### Explore More
+
+For more details about this project, visit the [About](about.html) page.
