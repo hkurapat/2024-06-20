@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Harshil Kurapati">
 
-<title>Students Exam Performances - Downloads</title>
+<title>Students Exam Performances - Student Exam Performances</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -97,7 +98,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Data Analysis</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./downloads.html" aria-current="page"> 
+    <a class="nav-link" href="./downloads.html"> 
 <span class="menu-text">Downloads</span></a>
   </li>  
   <li class="nav-item">
@@ -120,11 +121,17 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#downloads" id="toc-downloads" class="nav-link active" data-scroll-target="#downloads">Downloads</a>
+  <li><a href="#overview-of-students-exam-performances-dataset" id="toc-overview-of-students-exam-performances-dataset" class="nav-link active" data-scroll-target="#overview-of-students-exam-performances-dataset">Overview of Students Exam Performances Dataset</a>
   <ul class="collapse">
-  <li><a href="#data-files" id="toc-data-files" class="nav-link" data-scroll-target="#data-files">Data Files</a></li>
-  <li><a href="#analysis-reports" id="toc-analysis-reports" class="nav-link" data-scroll-target="#analysis-reports">Analysis Reports</a></li>
+  <li><a href="#dataset-description" id="toc-dataset-description" class="nav-link" data-scroll-target="#dataset-description">Dataset Description</a></li>
+  <li><a href="#initial-data-exploration" id="toc-initial-data-exploration" class="nav-link" data-scroll-target="#initial-data-exploration">Initial Data Exploration</a>
+  <ul class="collapse">
+  <li><a href="#load-necessary-libraries" id="toc-load-necessary-libraries" class="nav-link" data-scroll-target="#load-necessary-libraries">Load necessary libraries</a></li>
   </ul></li>
+  </ul></li>
+  <li><a href="#calculate-summary-statistics" id="toc-calculate-summary-statistics" class="nav-link" data-scroll-target="#calculate-summary-statistics">Calculate summary statistics</a></li>
+  <li><a href="#print-summary-statistics" id="toc-print-summary-statistics" class="nav-link" data-scroll-target="#print-summary-statistics">Print summary statistics</a></li>
+  <li><a href="#plot-distributions-of-exam-scores" id="toc-plot-distributions-of-exam-scores" class="nav-link" data-scroll-target="#plot-distributions-of-exam-scores">Plot distributions of exam scores</a></li>
   </ul>
 </nav>
     </div>
@@ -133,13 +140,19 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Downloads</h1>
+<h1 class="title">Student Exam Performances</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Harshil Kurapati </p>
+          </div>
+  </div>
     
   
     
@@ -150,24 +163,47 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="downloads" class="level1">
-<h1>Downloads</h1>
-<section id="data-files" class="level2">
-<h2 class="anchored" data-anchor-id="data-files">Data Files</h2>
+<section id="overview-of-students-exam-performances-dataset" class="level1">
+<h1>Overview of Students Exam Performances Dataset</h1>
+<p>This website explores the performance of students in exams using the StudentsPerformance.csv dataset. The dataset includes information such as student demographics, parental education levels, and exam scores in various subjects.</p>
+<section id="dataset-description" class="level2">
+<h2 class="anchored" data-anchor-id="dataset-description">Dataset Description</h2>
+<p>The dataset contains the following columns:</p>
 <ul>
-<li><a href="data/StudentsPerformance.csv">Students Performance Data</a></li>
+<li><code>gender</code>: Student’s gender (male/female)</li>
+<li><code>race/ethnicity</code>: Race/ethnicity of the student</li>
+<li><code>parental level of education</code>: Parent’s education level</li>
+<li><code>lunch</code>: Type of lunch student received (standard/reduced)</li>
+<li><code>test preparation course</code>: Whether the student completed a test preparation course (none/completed)</li>
+<li><code>math score</code>: Score in math exam</li>
+<li><code>reading score</code>: Score in reading exam</li>
+<li><code>writing score</code>: Score in writing exam</li>
 </ul>
 </section>
-<section id="analysis-reports" class="level2">
-<h2 class="anchored" data-anchor-id="analysis-reports">Analysis Reports</h2>
-<ul>
-<li><a href="reports/math_analysis.pdf">Math Scores Analysis Report</a></li>
-<li><a href="reports/reading_analysis.pdf">Reading Scores Analysis Report</a></li>
-<li><a href="reports/writing_analysis.pdf">Writing Scores Analysis Report</a></li>
-</ul>
-
-
+<section id="initial-data-exploration" class="level2">
+<h2 class="anchored" data-anchor-id="initial-data-exploration">Initial Data Exploration</h2>
+<section id="load-necessary-libraries" class="level3">
+<h3 class="anchored" data-anchor-id="load-necessary-libraries">Load necessary libraries</h3>
+<p>library(tidyverse)</p>
+<p>students &lt;- read.csv(“data/StudentsPerformance.csv”)</p>
 </section>
+</section>
+</section>
+<section id="calculate-summary-statistics" class="level1">
+<h1>Calculate summary statistics</h1>
+<p>summary_stats &lt;- students %&gt;% summarise( mean_math_score = mean(<code>math score</code>, na.rm = TRUE), mean_reading_score = mean(<code>reading score</code>, na.rm = TRUE), mean_writing_score = mean(<code>writing score</code>, na.rm = TRUE), sd_math_score = sd(<code>math score</code>, na.rm = TRUE), sd_reading_score = sd(<code>reading score</code>, na.rm = TRUE), sd_writing_score = sd(<code>writing score</code>, na.rm = TRUE) )</p>
+</section>
+<section id="print-summary-statistics" class="level1">
+<h1>Print summary statistics</h1>
+<p>summary_stats</p>
+</section>
+<section id="plot-distributions-of-exam-scores" class="level1">
+<h1>Plot distributions of exam scores</h1>
+<p>students %&gt;% gather(key = “subject”, value = “score”, <code>math score</code>, <code>reading score</code>, <code>writing score</code>) %&gt;% ggplot(aes(x = score, fill = subject)) + geom_histogram(binwidth = 10, color = “black”, alpha = 0.7) + facet_wrap(~ subject, scales = “free”) + labs(title = “Distribution of Exam Scores”, x = “Score”, y = “Count”) + theme_minimal()</p>
+<p>students %&gt;% group_by(gender) %&gt;% summarise( mean_math_score = mean(<code>math score</code>, na.rm = TRUE), mean_reading_score = mean(<code>reading score</code>, na.rm = TRUE), mean_writing_score = mean(<code>writing score</code>, na.rm = TRUE) ) %&gt;% gather(key = “subject”, value = “mean_score”, -gender) %&gt;% ggplot(aes(x = subject, y = mean_score, fill = gender)) + geom_bar(stat = “identity”, position = “dodge”) + labs(title = “Average Scores by Gender”, x = “Subject”, y = “Mean Score”) + theme_minimal()</p>
+<p>students %&gt;% gather(key = “subject”, value = “score”, <code>math score</code>, <code>reading score</code>, <code>writing score</code>) %&gt;% ggplot(aes(x = <code>parental level of education</code>, y = score, fill = subject)) + geom_boxplot() + labs(title = “Scores by Parental Education Level”, x = “Parental Education Level”, y = “Score”) + theme_minimal() + theme(axis.text.x = element_text(angle = 45, hjust = 1))</p>
+
+
 </section>
 
 </main> <!-- /main -->
