@@ -8,8 +8,7 @@ execute:
 
 # Introduction
 
-Welcome to the Student Exam Performances project website. This project analyzes the performance of students in exams using the Kaggle dataset. It focuses on understanding factors such as demographics, parental education levels, and test preparation, and how these correlate with exam scores.
-
+Welcome to the Student Exam Performances project website. This project analyzes the performance of students in exams using a dataset from Kaggle. It focuses on understanding factors such as demographics, parental education levels, and test preparation, and how these correlate with exam scores. Discover insights and trends that can help improve educational outcomes.
 ## Exploring Exam Scores
 
 ### Distribution of Math Scores
@@ -33,3 +32,19 @@ ggplot(students, aes(x = `math score`, fill = gender)) +
     legend.title = element_blank(),
     legend.text = element_text(size = 12)
   )
+
+# Calculate mean scores by gender
+gender_scores <- data %>%
+  group_by(gender) %>%
+  summarise(
+    mean_math_score = mean(`math score`),
+    mean_reading_score = mean(`reading score`),
+    mean_writing_score = mean(`writing score`)
+  )
+
+# Plot mean scores by gender
+ggplot(gender_scores, aes(x=gender, y=mean_math_score)) +
+  geom_bar(stat="identity", fill="skyblue") +
+  labs(title="Mean Math Score by Gender", x="Gender", y="Mean Math Score") +
+  theme_minimal()
+
