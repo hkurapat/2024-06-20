@@ -1,6 +1,6 @@
 ---
 title: "Student Exam Performances"
-author: "Your Name"
+author: "Harshil Kurapati"
 ---
 
 # Overview of Students Exam Performances Dataset

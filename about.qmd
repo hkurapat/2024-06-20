@@ -1,9 +1,45 @@
 ---
-title: "Students Performances on Exams"
-Author: "Harshil K"
-format: "html"
-execute: 
-  echo: false
-  message: false
+title: "About Me"
+author: "Harshil Kurapati"
 ---
+
+# About This Project
+
+This website explores the performance of students in exams using the `StudentsPerformance.csv` dataset. The data provides insights into various factors that may affect student performance, including gender, race/ethnicity, parental education level, and more.
+
+## Project Overview
+
+The objective of this project is to analyze and visualize the data to uncover patterns and insights into student performance. The following sections cover:
+
+- **Data Source**: The origin of the data and its contents.
+- **Data Analysis**: Methods used to analyze the data.
+- **Findings**: Key insights from the data analysis.
+- **Visualizations**: Graphical representations of the data.
+
+## About the Dataset
+
+The dataset contains records for various students along with their scores in math, reading, and writing exams. It includes the following columns:
+
+- `gender`: Student’s gender (male/female)
+- `race/ethnicity`: Race/ethnicity of the student
+- `parental level of education`: Parent’s education level
+- `lunch`: Type of lunch (standard/reduced)
+- `test preparation course`: Whether the student completed a test preparation course (none/completed)
+- `math score`: Score in math exam
+- `reading score`: Score in reading exam
+- `writing score`: Score in writing exam
+
+## About the Author
+
+I'm [Your Name], a [Your Position] with a passion for data analysis and visualization. This project is part of my exploration into educational data and aims to provide valuable insights into factors affecting student performance.
+
+For more information, feel free to contact me at [your email].
+
+## Acknowledgements
+
+I would like to thank [Institutions/People] for providing the data and support for this project.
+
+## License
+
+This project is licensed under the [License Name].
 
