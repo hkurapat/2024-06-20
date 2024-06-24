@@ -1,35 +1,13 @@
+/* Example styles to mimic the example website */
 body {
-  font-family: 'Arial', sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.6;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  color: #2c3e50;
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
-.navbar {
-  background-color: #2980b9;
-}
-
-.navbar a {
-  color: white;
-}
-
-footer {
-  background-color: #2980b9;
-  color: white;
-  text-align: center;
-  padding: 10px 0;
-}
-
-.table {
-  width: 100%;
-  max-width: 100%;
-  margin-bottom: 1rem;
-  background-color: transparent;
-}
-
-.table th, .table td {
-  padding: 0.75rem;
-  vertical-align: top;
-  border-top: 1px solid #dee2e6;
-}
+/* Adjust as needed */

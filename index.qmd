@@ -1,109 +1,74 @@
 ---
-title: "Student Performance Analysis"
+title: "Student Exam Performances"
 author: "Your Name"
-date: "`r format(Sys.Date(), '%B %d, %Y')`"
-format:
-  html:
-    css: styles.css
-    toc: true
-    toc-depth: 2
-    toc-title: "Contents"
-    
 ---
 
+# Overview of Students Exam Performances Dataset
 
-# Load necessary libraries
+This website explores the performance of students in exams using the StudentsPerformance.csv dataset. The dataset includes information such as student demographics, parental education levels, and exam scores in various subjects.
+
+## Dataset Description
+
+The dataset contains the following columns:
+
+- `gender`: Student’s gender (male/female)
+- `race/ethnicity`: Race/ethnicity of the student
+- `parental level of education`: Parent’s education level
+- `lunch`: Type of lunch student received (standard/reduced)
+- `test preparation course`: Whether the student completed a test preparation course (none/completed)
+- `math score`: Score in math exam
+- `reading score`: Score in reading exam
+- `writing score`: Score in writing exam
+
+## Initial Data Exploration
+
+### Load necessary libraries
+
+```{r}
 library(tidyverse)
-library(ggplot2)
-library(dplyr)
-library(readr)
-library(summarytools)
-library(patchwork)
- # Load the data
-data <- read_csv("StudentsPerformance.csv")
 
-# Display the first few rows of the data
-head(data)
+students <- read.csv("data/StudentsPerformance.csv")
 
-# Summary statistics of the data
-summary(data)
+# Calculate summary statistics
+summary_stats <- students %>%
+  summarise(
+    mean_math_score = mean(`math score`, na.rm = TRUE),
+    mean_reading_score = mean(`reading score`, na.rm = TRUE),
+    mean_writing_score = mean(`writing score`, na.rm = TRUE),
+    sd_math_score = sd(`math score`, na.rm = TRUE),
+    sd_reading_score = sd(`reading score`, na.rm = TRUE),
+    sd_writing_score = sd(`writing score`, na.rm = TRUE)
+  )
 
-# Check for missing values
-sapply(data, function(x) sum(is.na(x)))
+# Print summary statistics
+summary_stats
 
-# Handle missing values (example: remove rows with missing values)
-data <- na.omit(data)
-
-# Convert necessary columns to appropriate data types
-data$gender <- as.factor(data$gender)
-data$race_ethnicity <- as.factor(data$`race/ethnicity`)
-data$parental_level_of_education <- as.factor(data$`parental level of education`)
-data$lunch <- as.factor(data$lunch)
-data$test_preparation_course <- as.factor(data$`test preparation course`)
-
-ggplot(data, aes(x=gender)) +
-  geom_bar(fill='skyblue') +
-  labs(title="Gender Distribution", x="Gender", y="Count") +
-  theme_minimal()
-ggplot(data, aes(x=gender, y=`math score`, fill=gender)) +
-  geom_boxplot() +
-  labs(title="Math Scores by Gender", x="Gender", y="Math Score") +
+# Plot distributions of exam scores
+students %>%
+  gather(key = "subject", value = "score", `math score`, `reading score`, `writing score`) %>%
+  ggplot(aes(x = score, fill = subject)) +
+  geom_histogram(binwidth = 10, color = "black", alpha = 0.7) +
+  facet_wrap(~ subject, scales = "free") +
+  labs(title = "Distribution of Exam Scores", x = "Score", y = "Count") +
   theme_minimal()
 
-ggplot(data, aes(x=gender, y=`reading score`, fill=gender)) +
-  geom_boxplot() +
-  labs(title="Reading Scores by Gender", x="Gender", y="Reading Score") +
+students %>%
+  group_by(gender) %>%
+  summarise(
+    mean_math_score = mean(`math score`, na.rm = TRUE),
+    mean_reading_score = mean(`reading score`, na.rm = TRUE),
+    mean_writing_score = mean(`writing score`, na.rm = TRUE)
+  ) %>%
+  gather(key = "subject", value = "mean_score", -gender) %>%
+  ggplot(aes(x = subject, y = mean_score, fill = gender)) +
+  geom_bar(stat = "identity", position = "dodge") +
+  labs(title = "Average Scores by Gender", x = "Subject", y = "Mean Score") +
   theme_minimal()
 
-ggplot(data, aes(x=gender, y=`writing score`, fill=gender)) +
+students %>%
+  gather(key = "subject", value = "score", `math score`, `reading score`, `writing score`) %>%
+  ggplot(aes(x = `parental level of education`, y = score, fill = subject)) +
   geom_boxplot() +
-  labs(title="Writing Scores by Gender", x="Gender", y="Writing Score") +
-  theme_minimal()
-ggplot(data, aes(x=parental_level_of_education, y=`math score`, fill=parental_level_of_education)) +
-  geom_boxplot() +
-  labs(title="Math Scores by Parental Education", x="Parental Education Level", y="Math Score") +
+  labs(title = "Scores by Parental Education Level", x = "Parental Education Level", y = "Score") +
   theme_minimal() +
-  theme(axis.text.x = element_text(angle=45, hjust=1))
-
-ggplot(data, aes(x=parental_level_of_education, y=`reading score`, fill=parental_level_of_education)) +
-  geom_boxplot() +
-  labs(title="Reading Scores by Parental Education", x="Parental Education Level", y="Reading Score") +
-  theme_minimal() +
-  theme(axis.text.x = element_text(angle=45, hjust=1))
-
-ggplot(data, aes(x=parental_level_of_education, y=`writing score`, fill=parental_level_of_education)) +
-  geom_boxplot() +
-  labs(title="Writing Scores by Parental Education", x="Parental Education Level", y="Writing Score") +
-  theme_minimal() +
-  theme(axis.text.x = element_text(angle=45, hjust=1))
-# Scatter plot between math and reading scores
-p1 <- ggplot(data, aes(x=`math score`, y=`reading score`)) +
-  geom_point(alpha=0.5, color='blue') +
-  geom_smooth(method='lm', color='red') +
-  labs(title="Math vs Reading Scores", x="Math Score", y="Reading Score") +
-  theme_minimal()
-
-# Scatter plot between math and writing scores
-p2 <- ggplot(data, aes(x=`math score`, y=`writing score`)) +
-  geom_point(alpha=0.5, color='green') +
-  geom_smooth(method='lm', color='red') +
-  labs(title="Math vs Writing Scores", x="Math Score", y="Writing Score") +
-  theme_minimal()
-
-# Combine the plots
-p1 + p2
-
-ggplot(data, aes(x=lunch, y=`math score`, fill=lunch)) +
-  geom_boxplot() +
-  labs(title="Math Scores by Lunch Type", x="Lunch Type", y="Math Score") +
-  theme_minimal()
-
-ggplot(data, aes(x=lunch, y=`reading score`, fill=lunch)) +
-  geom_boxplot() +
-  labs(title="Reading Scores by Lunch Type", x="Lunch Type", y="Reading Score") +
-  theme_minimal()
-
-ggplot(data, aes(x=lunch, y=`writing score`, fill=lunch)) +
-  geom_boxplot() +
-  labs(title="Writing Scores by Lunch Type", x="Lunch Type", y="Writing Score") +
-  theme_minimal()
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))

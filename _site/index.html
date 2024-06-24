@@ -8,7 +8,7 @@
 
 <meta name="author" content="Your Name">
 
-<title>. - Student Performance Analysis</title>
+<title>Students Exam Performances - Student Exam Performances</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -68,35 +68,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -109,7 +80,7 @@ window.Quarto = {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">.</span>
+    <span class="navbar-title">Students Exam Performances</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -124,7 +95,19 @@ window.Quarto = {
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./about.html"> 
-<span class="menu-text">Students Performances on Exams</span></a>
+<span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./data.qmd"> 
+<span class="menu-text">Data Analysis</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./visualization.qmd"> 
+<span class="menu-text">Visualization</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./downloads.qmd"> 
+<span class="menu-text">Downloads</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -139,17 +122,20 @@ window.Quarto = {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Contents</h2>
+    <h2 id="toc-title">On this page</h2>
    
+  <ul>
+  <li><a href="#overview-of-students-exam-performances-dataset" id="toc-overview-of-students-exam-performances-dataset" class="nav-link active" data-scroll-target="#overview-of-students-exam-performances-dataset">Overview of Students Exam Performances Dataset</a>
   <ul class="collapse">
-  <li><a href="#load-necessary-libraries" id="toc-load-necessary-libraries" class="nav-link active" data-scroll-target="#load-necessary-libraries">Load necessary libraries</a></li>
-  <li><a href="#display-the-first-few-rows-of-the-data" id="toc-display-the-first-few-rows-of-the-data" class="nav-link" data-scroll-target="#display-the-first-few-rows-of-the-data">Display the first few rows of the data</a></li>
-  <li><a href="#summary-statistics-of-the-data" id="toc-summary-statistics-of-the-data" class="nav-link" data-scroll-target="#summary-statistics-of-the-data">Summary statistics of the data</a></li>
-  <li><a href="#check-for-missing-values" id="toc-check-for-missing-values" class="nav-link" data-scroll-target="#check-for-missing-values">Check for missing values</a></li>
-  <li><a href="#handle-missing-values-example-remove-rows-with-missing-values" id="toc-handle-missing-values-example-remove-rows-with-missing-values" class="nav-link" data-scroll-target="#handle-missing-values-example-remove-rows-with-missing-values">Handle missing values (example: remove rows with missing values)</a></li>
-  <li><a href="#convert-necessary-columns-to-appropriate-data-types" id="toc-convert-necessary-columns-to-appropriate-data-types" class="nav-link" data-scroll-target="#convert-necessary-columns-to-appropriate-data-types">Convert necessary columns to appropriate data types</a></li>
-  <li><a href="#scatter-plot-between-math-and-writing-scores" id="toc-scatter-plot-between-math-and-writing-scores" class="nav-link" data-scroll-target="#scatter-plot-between-math-and-writing-scores">Scatter plot between math and writing scores</a></li>
-  <li><a href="#combine-the-plots" id="toc-combine-the-plots" class="nav-link" data-scroll-target="#combine-the-plots">Combine the plots</a></li>
+  <li><a href="#dataset-description" id="toc-dataset-description" class="nav-link" data-scroll-target="#dataset-description">Dataset Description</a></li>
+  <li><a href="#initial-data-exploration" id="toc-initial-data-exploration" class="nav-link" data-scroll-target="#initial-data-exploration">Initial Data Exploration</a>
+  <ul class="collapse">
+  <li><a href="#load-necessary-libraries" id="toc-load-necessary-libraries" class="nav-link" data-scroll-target="#load-necessary-libraries">Load necessary libraries</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#calculate-summary-statistics" id="toc-calculate-summary-statistics" class="nav-link" data-scroll-target="#calculate-summary-statistics">Calculate summary statistics</a></li>
+  <li><a href="#print-summary-statistics" id="toc-print-summary-statistics" class="nav-link" data-scroll-target="#print-summary-statistics">Print summary statistics</a></li>
+  <li><a href="#plot-distributions-of-exam-scores" id="toc-plot-distributions-of-exam-scores" class="nav-link" data-scroll-target="#plot-distributions-of-exam-scores">Plot distributions of exam scores</a></li>
   </ul>
 </nav>
     </div>
@@ -158,7 +144,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Student Performance Analysis</h1>
+<h1 class="title">Student Exam Performances</h1>
 </div>
 
 
@@ -172,12 +158,6 @@ window.Quarto = {
           </div>
   </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">Invalid Date</p>
-    </div>
-  </div>
   
     
   </div>
@@ -187,45 +167,45 @@ window.Quarto = {
 </header>
 
 
-<section id="load-necessary-libraries" class="level1">
-<h1>Load necessary libraries</h1>
-<p>library(tidyverse) library(ggplot2) library(dplyr) library(readr) library(summarytools) library(patchwork) # Load the data data &lt;- read_csv(“StudentsPerformance.csv”)</p>
+<section id="overview-of-students-exam-performances-dataset" class="level1">
+<h1>Overview of Students Exam Performances Dataset</h1>
+<p>This website explores the performance of students in exams using the StudentsPerformance.csv dataset. The dataset includes information such as student demographics, parental education levels, and exam scores in various subjects.</p>
+<section id="dataset-description" class="level2">
+<h2 class="anchored" data-anchor-id="dataset-description">Dataset Description</h2>
+<p>The dataset contains the following columns:</p>
+<ul>
+<li><code>gender</code>: Student’s gender (male/female)</li>
+<li><code>race/ethnicity</code>: Race/ethnicity of the student</li>
+<li><code>parental level of education</code>: Parent’s education level</li>
+<li><code>lunch</code>: Type of lunch student received (standard/reduced)</li>
+<li><code>test preparation course</code>: Whether the student completed a test preparation course (none/completed)</li>
+<li><code>math score</code>: Score in math exam</li>
+<li><code>reading score</code>: Score in reading exam</li>
+<li><code>writing score</code>: Score in writing exam</li>
+</ul>
 </section>
-<section id="display-the-first-few-rows-of-the-data" class="level1">
-<h1>Display the first few rows of the data</h1>
-<p>head(data)</p>
+<section id="initial-data-exploration" class="level2">
+<h2 class="anchored" data-anchor-id="initial-data-exploration">Initial Data Exploration</h2>
+<section id="load-necessary-libraries" class="level3">
+<h3 class="anchored" data-anchor-id="load-necessary-libraries">Load necessary libraries</h3>
+<p>library(tidyverse)</p>
+<p>students &lt;- read.csv(“data/StudentsPerformance.csv”)</p>
 </section>
-<section id="summary-statistics-of-the-data" class="level1">
-<h1>Summary statistics of the data</h1>
-<p>summary(data)</p>
 </section>
-<section id="check-for-missing-values" class="level1">
-<h1>Check for missing values</h1>
-<p>sapply(data, function(x) sum(is.na(x)))</p>
 </section>
-<section id="handle-missing-values-example-remove-rows-with-missing-values" class="level1">
-<h1>Handle missing values (example: remove rows with missing values)</h1>
-<p>data &lt;- na.omit(data)</p>
+<section id="calculate-summary-statistics" class="level1">
+<h1>Calculate summary statistics</h1>
+<p>summary_stats &lt;- students %&gt;% summarise( mean_math_score = mean(<code>math score</code>, na.rm = TRUE), mean_reading_score = mean(<code>reading score</code>, na.rm = TRUE), mean_writing_score = mean(<code>writing score</code>, na.rm = TRUE), sd_math_score = sd(<code>math score</code>, na.rm = TRUE), sd_reading_score = sd(<code>reading score</code>, na.rm = TRUE), sd_writing_score = sd(<code>writing score</code>, na.rm = TRUE) )</p>
 </section>
-<section id="convert-necessary-columns-to-appropriate-data-types" class="level1">
-<h1>Convert necessary columns to appropriate data types</h1>
-<p>data<span class="math inline">\(gender &lt;- as.factor(data\)</span>gender) data<span class="math inline">\(race_ethnicity &lt;- as.factor(data\)</span><code>race/ethnicity</code>) data<span class="math inline">\(parental_level_of_education &lt;- as.factor(data\)</span><code>parental level of education</code>) data<span class="math inline">\(lunch &lt;- as.factor(data\)</span>lunch) data<span class="math inline">\(test_preparation_course &lt;- as.factor(data\)</span><code>test preparation course</code>)</p>
-<p>ggplot(data, aes(x=gender)) + geom_bar(fill=‘skyblue’) + labs(title=“Gender Distribution”, x=“Gender”, y=“Count”) + theme_minimal() ggplot(data, aes(x=gender, y=<code>math score</code>, fill=gender)) + geom_boxplot() + labs(title=“Math Scores by Gender”, x=“Gender”, y=“Math Score”) + theme_minimal()</p>
-<p>ggplot(data, aes(x=gender, y=<code>reading score</code>, fill=gender)) + geom_boxplot() + labs(title=“Reading Scores by Gender”, x=“Gender”, y=“Reading Score”) + theme_minimal()</p>
-<p>ggplot(data, aes(x=gender, y=<code>writing score</code>, fill=gender)) + geom_boxplot() + labs(title=“Writing Scores by Gender”, x=“Gender”, y=“Writing Score”) + theme_minimal() ggplot(data, aes(x=parental_level_of_education, y=<code>math score</code>, fill=parental_level_of_education)) + geom_boxplot() + labs(title=“Math Scores by Parental Education”, x=“Parental Education Level”, y=“Math Score”) + theme_minimal() + theme(axis.text.x = element_text(angle=45, hjust=1))</p>
-<p>ggplot(data, aes(x=parental_level_of_education, y=<code>reading score</code>, fill=parental_level_of_education)) + geom_boxplot() + labs(title=“Reading Scores by Parental Education”, x=“Parental Education Level”, y=“Reading Score”) + theme_minimal() + theme(axis.text.x = element_text(angle=45, hjust=1))</p>
-<p>ggplot(data, aes(x=parental_level_of_education, y=<code>writing score</code>, fill=parental_level_of_education)) + geom_boxplot() + labs(title=“Writing Scores by Parental Education”, x=“Parental Education Level”, y=“Writing Score”) + theme_minimal() + theme(axis.text.x = element_text(angle=45, hjust=1)) # Scatter plot between math and reading scores p1 &lt;- ggplot(data, aes(x=<code>math score</code>, y=<code>reading score</code>)) + geom_point(alpha=0.5, color=‘blue’) + geom_smooth(method=‘lm’, color=‘red’) + labs(title=“Math vs Reading Scores”, x=“Math Score”, y=“Reading Score”) + theme_minimal()</p>
+<section id="print-summary-statistics" class="level1">
+<h1>Print summary statistics</h1>
+<p>summary_stats</p>
 </section>
-<section id="scatter-plot-between-math-and-writing-scores" class="level1">
-<h1>Scatter plot between math and writing scores</h1>
-<p>p2 &lt;- ggplot(data, aes(x=<code>math score</code>, y=<code>writing score</code>)) + geom_point(alpha=0.5, color=‘green’) + geom_smooth(method=‘lm’, color=‘red’) + labs(title=“Math vs Writing Scores”, x=“Math Score”, y=“Writing Score”) + theme_minimal()</p>
-</section>
-<section id="combine-the-plots" class="level1">
-<h1>Combine the plots</h1>
-<p>p1 + p2</p>
-<p>ggplot(data, aes(x=lunch, y=<code>math score</code>, fill=lunch)) + geom_boxplot() + labs(title=“Math Scores by Lunch Type”, x=“Lunch Type”, y=“Math Score”) + theme_minimal()</p>
-<p>ggplot(data, aes(x=lunch, y=<code>reading score</code>, fill=lunch)) + geom_boxplot() + labs(title=“Reading Scores by Lunch Type”, x=“Lunch Type”, y=“Reading Score”) + theme_minimal()</p>
-<p>ggplot(data, aes(x=lunch, y=<code>writing score</code>, fill=lunch)) + geom_boxplot() + labs(title=“Writing Scores by Lunch Type”, x=“Lunch Type”, y=“Writing Score”) + theme_minimal()</p>
+<section id="plot-distributions-of-exam-scores" class="level1">
+<h1>Plot distributions of exam scores</h1>
+<p>students %&gt;% gather(key = “subject”, value = “score”, <code>math score</code>, <code>reading score</code>, <code>writing score</code>) %&gt;% ggplot(aes(x = score, fill = subject)) + geom_histogram(binwidth = 10, color = “black”, alpha = 0.7) + facet_wrap(~ subject, scales = “free”) + labs(title = “Distribution of Exam Scores”, x = “Score”, y = “Count”) + theme_minimal()</p>
+<p>students %&gt;% group_by(gender) %&gt;% summarise( mean_math_score = mean(<code>math score</code>, na.rm = TRUE), mean_reading_score = mean(<code>reading score</code>, na.rm = TRUE), mean_writing_score = mean(<code>writing score</code>, na.rm = TRUE) ) %&gt;% gather(key = “subject”, value = “mean_score”, -gender) %&gt;% ggplot(aes(x = subject, y = mean_score, fill = gender)) + geom_bar(stat = “identity”, position = “dodge”) + labs(title = “Average Scores by Gender”, x = “Subject”, y = “Mean Score”) + theme_minimal()</p>
+<p>students %&gt;% gather(key = “subject”, value = “score”, <code>math score</code>, <code>reading score</code>, <code>writing score</code>) %&gt;% ggplot(aes(x = <code>parental level of education</code>, y = score, fill = subject)) + geom_boxplot() + labs(title = “Scores by Parental Education Level”, x = “Parental Education Level”, y = “Score”) + theme_minimal() + theme(axis.text.x = element_text(angle = 45, hjust = 1))</p>
 
 
 </section>
