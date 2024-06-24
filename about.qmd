@@ -11,10 +11,10 @@ This website explores the performance of students in exams using the `StudentsPe
 
 The objective of this project is to analyze and visualize the data to uncover patterns and insights into student performance. The following sections cover:
 
-- **Data Source**: The origin of the data and its contents.
-- **Data Analysis**: Methods used to analyze the data.
-- **Findings**: Key insights from the data analysis.
-- **Visualizations**: Graphical representations of the data.
+- **Home**: Introduction to the website and what its about with examples and visuals.
+- **Data Analysis**: Methods used to analyze the data with visuals.
+- **Sources**: The origin of the data and its contents.
+- **About**: About the project and the author.
 
 ## About the Dataset
 
