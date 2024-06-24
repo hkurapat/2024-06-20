@@ -25,7 +25,7 @@
     "href": "about.html",
     "title": "About Page",
     "section": "",
-    "text": "This website explores the performance of students in exams using the StudentsPerformance.csv dataset. The data provides insights into various factors that may affect student performance, including gender, race/ethnicity, parental education level, and more.\n\n\nThe objective of this project is to analyze and visualize the data to uncover patterns and insights into student performance. The following sections cover:\n\nHome: Introduction to the website and what its about with examples and visuals.\nData Analysis: Methods used to analyze the data with visuals.\nSources: The origin of the data and its contents.\nAbout: About the project and the author.\n\n\n\n\nThe dataset contains records for various students along with their scores in math, reading, and writing exams. It includes the following columns:\n\ngender: Student’s gender (male/female)\nrace/ethnicity: Race/ethnicity of the student\nparental level of education: Parent’s education level\nlunch: Type of lunch (standard/reduced)\ntest preparation course: Whether the student completed a test preparation course (none/completed)\nmath score: Score in math exam\nreading score: Score in reading exam\nwriting score: Score in writing exam\n\n\n\n\nI’m Harshil Kurapati, a rising senior in highschool with a passion for data science. This project is part of my exploration into educational data and aims to provide valuable insights into factors affecting student performance.\nFor more information, feel free to contact me at ckurapat@gmail.com.\n\n\n\nI would like to thank David Kanes Data Science Boot Camp for giving me an opportunity and support for this project."
+    "text": "This website explores the performance of students in exams using the StudentsPerformance.csv dataset. The data provides insights into various factors that may affect student performance, including gender, race/ethnicity, parental education level, and more.\n\n\nThe objective of this project is to analyze and visualize the data to uncover patterns and insights into student performance. The following sections cover:\n\nHome: Introduction to the website and what its about with examples and visuals.\nData Analysis: Methods used to analyze the data with visuals.\nSources: The origin of the data and its contents.\nAbout: About the project and the author.\n\n\n\n\nThe dataset contains records for various students along with their scores in math, reading, and writing exams. It includes the following columns:\n\ngender: Student’s gender (male/female)\nrace/ethnicity: Race/ethnicity of the student\nparental level of education: Parent’s education level\nlunch: Type of lunch (standard/reduced)\ntest preparation course: Whether the student completed a test preparation course (none/completed)\nmath score: Score in math exam\nreading score: Score in reading exam\nwriting score: Score in writing exam\n\n\n\n\nI’m Harshil Kurapati, a rising senior in highschool with a passion for data science. This project is part of my exploration into educational data and aims to provide valuable insights into factors affecting student performance.\nYou can find more about my work on GitHub or reach out to me via email at ckurapat@gmail.com.\n\n\n\nThis project was created as a part of Kane’s Data Science Bootcamp, where I learned essential skills in data analysis and visualization to tackle real-world challenges."
   },
   {
     "objectID": "about.html#project-overview",
@@ -46,14 +46,14 @@
     "href": "about.html#about-the-author",
     "title": "About Page",
     "section": "",
-    "text": "I’m Harshil Kurapati, a rising senior in highschool with a passion for data science. This project is part of my exploration into educational data and aims to provide valuable insights into factors affecting student performance.\nFor more information, feel free to contact me at ckurapat@gmail.com."
+    "text": "I’m Harshil Kurapati, a rising senior in highschool with a passion for data science. This project is part of my exploration into educational data and aims to provide valuable insights into factors affecting student performance.\nYou can find more about my work on GitHub or reach out to me via email at ckurapat@gmail.com."
   },
   {
     "objectID": "about.html#acknowledgements",
     "href": "about.html#acknowledgements",
     "title": "About Page",
     "section": "",
-    "text": "I would like to thank David Kanes Data Science Boot Camp for giving me an opportunity and support for this project."
+    "text": "This project was created as a part of Kane’s Data Science Bootcamp, where I learned essential skills in data analysis and visualization to tackle real-world challenges."
   },
   {
     "objectID": "about.html#license",

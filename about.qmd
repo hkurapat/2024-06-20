@@ -32,11 +32,11 @@ The dataset contains records for various students along with their scores in mat
 
 I'm Harshil Kurapati, a rising senior in highschool with a passion for data science. This project is part of my exploration into educational data and aims to provide valuable insights into factors affecting student performance.
 
-For more information, feel free to contact me at ckurapat@gmail.com.
+You can find more about my work on [GitHub](https://github.com/hkurapat) or reach out to me via email at ckurapat@gmail.com.
 
 ## Acknowledgements
 
-I would like to thank David Kanes Data Science Boot Camp for giving me an opportunity and support for this project.
-
+This project was created as a part of [Kane’s Data Science Bootcamp](https://bootcamp.davidkane.info/), where I learned essential skills in data analysis and visualization to tackle real-world challenges.
+ 
 
 
