@@ -9,6 +9,9 @@ execute:
 # Introduction
 
 Welcome to the Student Exam Performances project website. This project analyzes the performance of students in exams using a dataset from Kaggle. It focuses on understanding factors such as demographics, parental education levels, and test preparation, and how these correlate with exam scores. Discover insights and trends that can help improve educational outcomes.
+
+**Key Insight**: Students who completed the test preparation course scored significantly higher on average across all subjects compared to those who did not.
+
 ## Exploring Exam Scores
 
 ### Distribution of Math Scores
