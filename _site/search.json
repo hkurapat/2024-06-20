@@ -159,5 +159,40 @@
     "title": "Downloads",
     "section": "",
     "text": "Math Scores Analysis Report\nReading Scores Analysis Report\nWriting Scores Analysis Report"
+  },
+  {
+    "objectID": "data.html",
+    "href": "data.html",
+    "title": "Data Analysis",
+    "section": "",
+    "text": "Provide an introduction to the dataset and its context. Mention the source (Kaggle dataset on student exam performances), the variables included, and any initial insights or hypotheses you want to explore.\n\n\n\n\n\nDescribe the dataset structure, including the columns/features available and their meanings.\n\n\n\nProvide summary statistics such as mean, median, standard deviation for numerical variables like math scores, reading scores, and writing scores.\nlibrary(tidyverse)"
+  },
+  {
+    "objectID": "data.html#dataset-description",
+    "href": "data.html#dataset-description",
+    "title": "Student Exam Performances",
+    "section": "",
+    "text": "The dataset contains the following columns:\n\ngender: Student’s gender (male/female)\nrace/ethnicity: Race/ethnicity of the student\nparental level of education: Parent’s education level\nlunch: Type of lunch student received (standard/reduced)\ntest preparation course: Whether the student completed a test preparation course (none/completed)\nmath score: Score in math exam\nreading score: Score in reading exam\nwriting score: Score in writing exam"
+  },
+  {
+    "objectID": "data.html#initial-data-exploration",
+    "href": "data.html#initial-data-exploration",
+    "title": "Student Exam Performances",
+    "section": "",
+    "text": "library(tidyverse)\nstudents &lt;- read.csv(“data/StudentsPerformance.csv”)"
+  },
+  {
+    "objectID": "data.html#introduction",
+    "href": "data.html#introduction",
+    "title": "Data Analysis",
+    "section": "",
+    "text": "Provide an introduction to the dataset and its context. Mention the source (Kaggle dataset on student exam performances), the variables included, and any initial insights or hypotheses you want to explore."
+  },
+  {
+    "objectID": "data.html#exploratory-data-analysis",
+    "href": "data.html#exploratory-data-analysis",
+    "title": "Data Analysis",
+    "section": "",
+    "text": "Describe the dataset structure, including the columns/features available and their meanings.\n\n\n\nProvide summary statistics such as mean, median, standard deviation for numerical variables like math scores, reading scores, and writing scores.\nlibrary(tidyverse)"
   }
 ]

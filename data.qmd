@@ -1,32 +1,27 @@
 ---
-title: "Student Exam Performances"
-author: "Harshil Kurapati"
+title: "Data Analysis"
 ---
 
-# Overview of Students Exam Performances Dataset
+# Data Analysis of Student Exam Performances
 
-This website explores the performance of students in exams using the StudentsPerformance.csv dataset. The dataset includes information such as student demographics, parental education levels, and exam scores in various subjects.
+## Introduction
 
-## Dataset Description
+Provide an introduction to the dataset and its context. Mention the source (Kaggle dataset on student exam performances), the variables included, and any initial insights or hypotheses you want to explore.
 
-The dataset contains the following columns:
+## Exploratory Data Analysis
 
-- `gender`: Student’s gender (male/female)
-- `race/ethnicity`: Race/ethnicity of the student
-- `parental level of education`: Parent’s education level
-- `lunch`: Type of lunch student received (standard/reduced)
-- `test preparation course`: Whether the student completed a test preparation course (none/completed)
-- `math score`: Score in math exam
-- `reading score`: Score in reading exam
-- `writing score`: Score in writing exam
+### Overview of the Dataset
 
-## Initial Data Exploration
+Describe the dataset structure, including the columns/features available and their meanings.
 
-### Load necessary libraries
+### Summary Statistics
+
+Provide summary statistics such as mean, median, standard deviation for numerical variables like math scores, reading scores, and writing scores.
 
 ```{r}
 library(tidyverse)
 
+# Load dataset
 students <- read.csv("data/StudentsPerformance.csv")
 
 # Calculate summary statistics
@@ -38,20 +33,10 @@ summary_stats <- students %>%
     sd_math_score = sd(`math score`, na.rm = TRUE),
     sd_reading_score = sd(`reading score`, na.rm = TRUE),
     sd_writing_score = sd(`writing score`, na.rm = TRUE)
-  )
+)
 
 # Print summary statistics
 summary_stats
-
-# Plot distributions of exam scores
-students %>%
-  gather(key = "subject", value = "score", `math score`, `reading score`, `writing score`) %>%
-  ggplot(aes(x = score, fill = subject)) +
-  geom_histogram(binwidth = 10, color = "black", alpha = 0.7) +
-  facet_wrap(~ subject, scales = "free") +
-  labs(title = "Distribution of Exam Scores", x = "Score", y = "Count") +
-  theme_minimal()
-
 students %>%
   group_by(gender) %>%
   summarise(
@@ -64,7 +49,6 @@ students %>%
   geom_bar(stat = "identity", position = "dodge") +
   labs(title = "Average Scores by Gender", x = "Subject", y = "Mean Score") +
   theme_minimal()
-
 students %>%
   gather(key = "subject", value = "score", `math score`, `reading score`, `writing score`) %>%
   ggplot(aes(x = `parental level of education`, y = score, fill = subject)) +
